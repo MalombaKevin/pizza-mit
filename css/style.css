@@ -8,3 +8,16 @@
   .card:hover {
     transform: scale(1.1);
   }
+  option{
+      width:30px;
+  }
+
+  .footer{
+      height:30rem;
+      background-color: black;
+      color:white;
+  }
+  #contact input{
+      width:86%;
+
+  }
