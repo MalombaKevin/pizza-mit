@@ -9,6 +9,10 @@
   .card-img-top:hover {
     transform: scale(1.1);
   }
+  .pizzaName{
+      font-weight: 900;
+      font-size:1.2rem;
+  }
   
   option{
       width:30px;
