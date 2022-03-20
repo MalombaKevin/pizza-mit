@@ -1,8 +1,9 @@
-<!-- # PizzaMit
+# PizzaMit
 
 ##### By Kevin Malomba
 ### Full Stack Developer
-### PizzaMit is 
+### PizzaMit is the number one Pizza delivery service provider in Nairobi and Kiambu County.This website enables users to order their pizza.
+
 
 
 ## Table of Content
@@ -15,7 +16,9 @@
 
 
 ## Description
-+ .
++ PizzaMit Webapp enables users to order their pizza at their own comfort. User chooses the size of Pizza they want: either large, medium or small. User then proceeds to choose the kind of crust they want. User can also add toppings to their pizza then go ahead to select a delivery option:User can choose to pick their pizza at PizzaMit Hub or get it delivered. Finally they can proceed and make an order or cancel it.
+### Future Plans
++ PizzaMit intends to extend their services beyond Nairobi and Kiambu county. Pizzamit team is strongly considering Nakuru County and Kisumu County.
 
 [Go Back to the top](#PizzaMit)
 ## Access
@@ -54,4 +57,4 @@
 [Go Back to the top](#PizzaMit)
 
 
- -->
+
