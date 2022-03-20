@@ -40,8 +40,8 @@
                     src="https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg"
                     style="height:30em" alt="First slide" class="imageCarousel">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Welcome to PizzaMit</h5>
-                    <p>Pizza for you, Pizza for me, Pizza for All</p>
+                    <h3><span>Welcome to PizzaMit</span></h3>
+                    <h2><span>Pizza for you, Pizza for me, Pizza for All</span></h2>
                 </div>
             </div>
             <div class="carousel-item">
@@ -82,9 +82,15 @@
             <button type="submit" id="cancelNow">EXIT</button><br><br>
 
             <form id="form">
+                <label for="Name">Name<br>
+                    <input type="text" name="fullame" id="fullName" placeholder="Your Name">
+                </label>
+                <label for="Phone Number">Phone Number
+                    <input type="tel" name="phone" id="phoneNumber" placeholder="+254 123456789">
+                </label>
 
                 <label for="Size of Pizza"> Size of Pizza<br>
-                    <select name="size" required>
+                    <select name="size" id="size" required>
 
                         <Option value=""></Option>
                         <option value="Large">Large Pizza </option>
@@ -95,7 +101,7 @@
                     </select>
                 </label><br>
                 <label for="crust">Type of Crust<br>
-                    <select name="" id="" required>
+                    <select name="crust" id="crust" required>
                         <Option value=""></Option>
                         <option value="Crispy">Crispy</option>
                         <option value="Large">Stuffed</option>
@@ -103,26 +109,26 @@
                     </select>
                 </label><br>
                 <label for="toppings">Toppings</label><br>
-                Onions <input type="checkbox" name="onions" id="onions">
-                Sausage <input type="checkbox" name="sausage" id="sausage">
-                Pepperoni <input type="checkbox" name="pepper" id="pepper">
+                <input class="toppings" type="checkbox" name="onions" id="onions" value="onions">Onions
+                <input class="toppings" type="checkbox" name="sausage" id="sausage" value="sausages">Sausage
 
 
-                <label for="toppings">Delivery<br>
-                    <select name="" id="" required>
+
+                <label for="delivery">Delivery<br>
+                    <select name="delivery" id="delivery" required>
                         <Option value=""></Option>
-                        <option value="Large">PizzaMit Delivery</option>
-                        <option value="Large">Self-Pick</option>
+                        <option value="PizzaMit Delivery Service">PizzaMit Delivery</option>
+                        <option value="pick">Self-Pick</option>
                     </select>
                 </label>
-                <label for="toppings">Location<br>
-                    <select name="" id="" required>
+                <label for="location">Location<br>
+                    <select name="location" id="location" required>
                         <Option value=""></Option>
-                        <option value="Large">Juja</option>
-                        <option value="Large">Thika</option>
-                        <option value="Large">TRM</option>
-                        <option value="Large">Nairobi CBD</option>
-                        <option value="Large">Muthaiga</option>
+                        <option value="Juja">Juja</option>
+                        <option value="Thika">Thika</option>
+                        <option value="TRM">TRM</option>
+                        <option value="Muthaiga">Muthaiga</option>
+                        <option value="Nairobi CBD">Nairobi CBD</option>
                     </select>
                 </label><br>
                 <button type="submit" id="orderMit">Order</button>
@@ -143,8 +149,8 @@
                     <img class="card-img-top" src="Assets/pizza.jpg" style="height:12rem" alt="Card image cap"
                         class="pizzaPic">
 
-                    <span class="pizzaName">Mit Pepperoni Family</span>
-                    <span>3,500 Kshs</span>
+                    <span class="pizzaName">Mit Beef Family</span>
+                    <span>3,400 Kshs</span>
 
                     <button type="submit" class="order">Order</button>
                 </div>
@@ -153,7 +159,7 @@
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="Assets/pizza12.jpg" style="height:12rem" alt="Card image cap">
                     <span class="pizzaName">Mit Chicken Family</span>
-                    <span>3,300 Kshs</span>
+                    <span>3,400 Kshs</span>
                     <button type="submit" class="order">Order</button>
                 </div>
             </div>

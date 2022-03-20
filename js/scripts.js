@@ -4,14 +4,21 @@ $(Document).ready(function () {
 		$('#orderNow').hide();
 	});
 	$('#cancelNow').click(function () {
-	alert("You are now leaving transaction section!")
-    $("#ordering").hide();
-    $("#orderNow").show();
-	
+		alert('You are now leaving transaction section!');
+		$('#ordering').hide();
+		$('#orderNow').show();
 	});
 
-	// $(".ordering").click(function(){
-	//     $("#orderNow").toggle()
-	//     $("#form").toggle()
-	// });
+	// DOM
+
+	$('#form').submit(function (event) {
+		var userName = $('#fullName').val();
+		var userContact=$('#phoneNumber').val();
+        var pizzaSize= $('#size').val();
+        var toppingsType=$("#form input:checkbox").val();
+        alert(toppingsType );
+        var delivery=$('#delivery').val();
+        var userLocation=$('#location').val();
+		event.preventDefault();
+	});
 });
