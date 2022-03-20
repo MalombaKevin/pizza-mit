@@ -75,60 +75,61 @@
 
 
     <div class="container" style="text-align:center">
+        
 
-        <!-- <button type="submit" id="orderNow">PLACE YOUR ORDER</button> -->
+            <button type="submit" id="orderNow">PLACE YOUR ORDER</button><br><br>
+            <div id="ordering">
+            <button type="submit" id="cancelNow">EXIT</button><br><br>
 
-        <form id="form">
+            <form id="form">
 
-            <label for="Size of Pizza"> Size of Pizza<br>
-                <select name="size">
+                <label for="Size of Pizza"> Size of Pizza<br>
+                    <select name="size" required>
 
-                    <Option value=""></Option>
-                    <option value="Large">Large Pizza </option>
+                        <Option value=""></Option>
+                        <option value="Large">Large Pizza </option>
 
-                    <option value="medium">Medium Pizza</option>
-                    <option value="small">Small Pizza</option>
+                        <option value="medium">Medium Pizza</option>
+                        <option value="small">Small Pizza</option>
 
-                </select>
-            </label><br>
-            <label for="crust">Type of Crust<br>
-                <select name="" id="">
-                    <Option value=""></Option>
-                    <option value="Large">Crispy</option>
-                    <option value="Large">Stuffed</option>
-                    <option value="Large">Glutten Free</option>
-                </select>
-            </label><br>
-            <label for="toppings">Toppings<br>
-                <select name="" id="">
-                    <Option value=""></Option>
-                    <option value="Large">Onion</option>
-                    <option value="Large">Sausage</option>
-                    <option value="Large">Pepperoni</option>
-                </select>
-            </label>
-            <label for="toppings">Delivery<br>
-                <select name="" id="">
-                    <Option value=""></Option>
-                    <option value="Large">PizzaMit Delivery</option>
-                    <option value="Large">Self-Pick</option>
-                </select>
-            </label>
-            <label for="toppings">Location<br>
-                <select name="" id="">
-                    <Option value=""></Option>
-                    <option value="Large">Juja</option>
-                    <option value="Large">Thika</option>
-                    <option value="Large">TRM</option>
-                    <option value="Large">Nairobi CBD</option>
-                    <option value="Large">Muthaiga</option>
-                </select>
-            </label>
-            <button type="submit" id="orderMit">Order</button>
-            <button type="reset" id="cancelMit">Cancel</button>
-        </form>
+                    </select>
+                </label><br>
+                <label for="crust">Type of Crust<br>
+                    <select name="" id="" required>
+                        <Option value=""></Option>
+                        <option value="Crispy">Crispy</option>
+                        <option value="Large">Stuffed</option>
+                        <option value="Large">Glutten Free</option>
+                    </select>
+                </label><br>
+                <label for="toppings">Toppings</label><br>
+                Onions <input type="checkbox" name="" id="">
+                Sausage <input type="checkbox" name="" id="">
+                Pepperoni <input type="checkbox" name="" id="">
 
-    </div>
+
+                <label for="toppings">Delivery<br>
+                    <select name="" id="" required>
+                        <Option value=""></Option>
+                        <option value="Large">PizzaMit Delivery</option>
+                        <option value="Large">Self-Pick</option>
+                    </select>
+                </label>
+                <label for="toppings">Location<br>
+                    <select name="" id="" required>
+                        <Option value=""></Option>
+                        <option value="Large">Juja</option>
+                        <option value="Large">Thika</option>
+                        <option value="Large">TRM</option>
+                        <option value="Large">Nairobi CBD</option>
+                        <option value="Large">Muthaiga</option>
+                    </select>
+                </label><br>
+                <button type="submit" id="orderMit">Order</button>
+                <button type="reset" id="cancelMit">Cancel</button>
+            </form>
+        </div>
+
 
     </div><br><br>
 
