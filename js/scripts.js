@@ -4,7 +4,7 @@ $(Document).ready(function () {
 		$('#orderNow').hide();
 	});
 	$('#cancelNow').click(function () {
-	confirm("Are you sure you want leave this page?")
+	alert("You are now leaving transaction section!")
     $("#ordering").hide();
     $("#orderNow").show();
 	
