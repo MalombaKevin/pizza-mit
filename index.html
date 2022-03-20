@@ -9,28 +9,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
     <title>PizzaMit</title>
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <a class="navbar-brand" href="#"><span style="font-size:150%"><strong>Pizza<span
-                        style="color:chartreuse">Mit</span></strong></a></span> 
-                </div>
-                <div class="col">
-                    <a class="navbar-brand" href="#"><span style="font-size:150%"><strong>Pizza<span
-                        style="color:chartreuse">Mit</span></strong></a></span> 
-                </div>
-            </div>
-                               
-        </div>    
+
+    <nav class="navbar fixed-top navbar-dark badge-dark">
+
+        <div class="companyName">
+            <a class="navbar-brand" href="index.html"><span style="font-size:150%"><strong>Pizza<span
+                            style="color:chartreuse">Mit</span></strong></a></span>
+        </div>
+
+
     </nav>
+
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -76,29 +72,44 @@
             <span class="sr-only">Next</span>
         </a>
     </div><br><br><br>
-    
 
-    <div class="container">
+
+    <div class="container" style="text-align:center">
+
+        <!-- <button type="submit" id="orderNow">PLACE YOUR ORDER</button> -->
+
         <form id="form">
-            <select name="size" id="">
-                <Option value=""></Option>
-                <option value="Large">
-                    <h1>Large Pizza</h1>
-                </option>
-                <option value="Large">Medium Pizza</option>
-                <option value="Large">Small Pizza</option>
-            </select>
-            <select name="" id="">
-                <option value="Large">Crispy</option>
-                <option value="Large">Stuffed</option>
-                <option value="Large">Glutten Free</option>
-            </select>
-            <select name="" id="">
-                <option value="Large">Large Pizza</option>
-                <option value="Large">Medium Pizza</option>
-                <option value="Large">Small Pizza</option>
-            </select>
+
+            <label for="Size of Pizza"> Size of Pizza<br>
+                <select name="size">
+
+                    <Option value=""></Option>
+                    <option value="Large">Large Pizza </option>
+
+                    <option value="medium">Medium Pizza</option>
+                    <option value="small">Small Pizza</option>
+
+                </select>
+            </label><br>
+            <label for="crust">Type of Crust<br>
+                <select name="" id="">
+                    <Option value=""></Option>
+                    <option value="Large">Crispy</option>
+                    <option value="Large">Stuffed</option>
+                    <option value="Large">Glutten Free</option>
+                </select>
+            </label><br>
+            <label for="toppings">Toppings<br>
+                <select name="" id="">
+                    <Option value=""></Option>
+                    <option value="Large">Onion</option>
+                    <option value="Large">Sausage</option>
+                    <option value="Large">Pepperoni</option>
+                </select>
+            </label>
         </form>
+
+    </div>
 
     </div><br><br>
 
@@ -226,11 +237,14 @@
                 <div class="col"><br>
                     <span style="font-size:150%"><strong>&nbsp;Pizza<span style="color:chartreuse">Mit</span>
                         </strong></span><br><br><br><br>
-                        <span class="icon" id="icon">
-                            <abbr title="PizzaMit on Facebook"> <a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook"></i></a></abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <abbr title="PizzaMit on Twitter"><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter "></i></a></abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <abbr title="PizzaMit on Instagram "><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a><br>
-                        </span>
+                    <span class="icon" id="icon">
+                        <abbr title="PizzaMit on Facebook"> <a href="https://web.facebook.com/?_rdc=1&_rdr"
+                                target="_blank"><i class="fab fa-facebook"></i></a></abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <abbr title="PizzaMit on Twitter"><a href="https://twitter.com/" target="_blank"><i
+                                    class="fab fa-twitter "></i></a></abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <abbr title="PizzaMit on Instagram "><a href="https://www.instagram.com/"><i
+                                    class="fab fa-instagram"></i></a><br>
+                    </span>
 
                 </div>
 
@@ -243,29 +257,25 @@
                         <li>Blog</li>
                         <li> <span>Pizza<span style="color:chartreuse">Mit</span>
                             </span>Challenge</li>
-
                     </ul>
-                    
-
-
                 </div>
 
-                <div class="col" style="text-align:center"><br>
+                <div class="col"><br>
                     <form action="https://formspree.io/f/mqknlwgg" method="POST" id="contact">
-                        <input type="text" name="name" id="" placeholder="Your Name" required><br><br>
-                        <input type="email" name="email" id="" placeholder="user@gmail.com" required><br><br>
-                        <textarea name="" id="" cols="30" rows="7" placeholder="Comment" required></textarea><br>
+                        <input type="text" name="name" id="name" placeholder="Your Name" required><br><br>
+                        <input type="email" name="email" id="email" placeholder="user@gmail.com" required><br><br>
+                        <textarea name="message" id="message" cols="30" rows="7" placeholder="Comment"
+                            required></textarea><br>
                         <button type="submit" class="button1">Contact Us</button>&nbsp;&nbsp;&nbsp;
                         <button type="reset" class="button2">Clear</button>
                     </form>
                 </div>
-
-
             </div>
         </div><br>
-        <marquee behavior="scroll" direction="alternarte"><span style="color:chartreuse; font-size:large">BONNE
-            APPETITE!</span></marquee>
-       
+
+        <marquee behavior="scroll" direction="alternarte"><span style="color:chartreuse; font-size:large">Bon
+                Appétit!</span></marquee>
+
 
 
 
