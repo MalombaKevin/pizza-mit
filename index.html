@@ -16,17 +16,44 @@
 </head>
 
 <body>
-
-    <nav class="navbar fixed-top navbar-dark badge-dark">
-
-        <div class="companyName">
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><span style="font-size:150%"><strong>Pizza<span
-                            style="color:chartreuse">Mit</span></strong></a></span>
+                style="color:chartreuse">Mit</span></strong></a>
+
         </div>
+      </nav>
+    <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="index.html"><span style="font-size:150%"><strong>Pizza<span
+                                        style="color:chartreuse">Mit</span></strong></a>
 
-
-    </nav>
-
+                    </li>
+                    <div class="navbar-nav" style="margin-left:400%; margin-top:3%">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span><strong>About<span
+                                            style="color:chartreuse">Us</span></strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span><strong>Log<span
+                                            style="color:chartreuse">In</span></strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span><strong>Sign<span
+                                            style="color:chartreuse">Up</span></strong></a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -35,7 +62,7 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active" style="height:30em">
+            <div class="carousel-item active" style="height:30em ">
                 <img class="d-block w-100"
                     src="https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg"
                     style="height:30em" alt="First slide" class="imageCarousel">
@@ -75,67 +102,109 @@
 
 
     <div class="container" style="text-align:center">
-        
 
-            <button type="submit" id="orderNow">PLACE YOUR ORDER</button><br><br>
-            <div id="ordering">
+
+        <button type="submit" id="orderNow">PLACE YOUR ORDER</button>
+        <div id="ordering">
             <button type="submit" id="cancelNow">EXIT</button><br><br>
+            <div class="row">
+                <div class="col">
+                    <form id="form">
+                        <label for="Name">Name<br>
+                            <input type="text" name="fullame" id="fullName" placeholder="Your Name">
+                        </label>
+                        <label for="Phone Number">Phone Number
+                            <input type="tel" name="phone" id="phoneNumber" placeholder="+254 123456789">
+                        </label>
 
-            <form id="form">
-                <label for="Name">Name<br>
-                    <input type="text" name="fullame" id="fullName" placeholder="Your Name">
-                </label>
-                <label for="Phone Number">Phone Number
-                    <input type="tel" name="phone" id="phoneNumber" placeholder="+254 123456789">
-                </label>
+                        <label for="Size of Pizza"> Size of Pizza<br>
+                            <select name="size" id="size" required>
 
-                <label for="Size of Pizza"> Size of Pizza<br>
-                    <select name="size" id="size" required>
+                                <Option value=""></Option>
+                                <option value="Large">Large Pizza </option>
 
-                        <Option value=""></Option>
-                        <option value="Large">Large Pizza </option>
+                                <option value="medium">Medium Pizza</option>
+                                <option value="small">Small Pizza</option>
 
-                        <option value="medium">Medium Pizza</option>
-                        <option value="small">Small Pizza</option>
-
-                    </select>
-                </label><br>
-                <label for="crust">Type of Crust<br>
-                    <select name="crust" id="crust" required>
-                        <Option value=""></Option>
-                        <option value="Crispy">Crispy</option>
-                        <option value="Large">Stuffed</option>
-                        <option value="Large">Glutten Free</option>
-                    </select>
-                </label><br>
-                <label for="toppings">Toppings</label><br>
-                <input class="toppings" type="checkbox" name="onions" id="onions" value="onions">Onions
-                <input class="toppings" type="checkbox" name="sausage" id="sausage" value="sausages">Sausage
+                            </select>
+                        </label><br>
+                        <label for="crust">Type of Crust<br>
+                            <select name="crust" id="crust" required>
+                                <Option value=""></Option>
+                                <option value="Crispy">Crispy</option>
+                                <option value="Stuffed">Stuffed</option>
+                                <option value="Glutten Free">Glutten Free</option>
+                            </select>
+                        </label><br>
+                        <label for="toppings">Toppings</label><br>
+                        <input class="toppings" type="checkbox" name="onions" id="onions" value="onions">Onions
+                        <input class="toppings" type="checkbox" name="sausage" id="sausage" value="sausages">Sausage
 
 
 
-                <label for="delivery">Delivery<br>
-                    <select name="delivery" id="delivery" required>
-                        <Option value=""></Option>
-                        <option value="PizzaMit Delivery Service">PizzaMit Delivery</option>
-                        <option value="pick">Self-Pick</option>
-                    </select>
-                </label>
-                <label for="location">Location<br>
-                    <select name="location" id="location" required>
-                        <Option value=""></Option>
-                        <option value="Juja">Juja</option>
-                        <option value="Thika">Thika</option>
-                        <option value="TRM">TRM</option>
-                        <option value="Muthaiga">Muthaiga</option>
-                        <option value="Nairobi CBD">Nairobi CBD</option>
-                    </select>
-                </label><br>
-                <button type="submit" id="orderMit">Order</button>
-                <button type="reset" id="cancelMit">Cancel</button>
-            </form>
+                        <label for="delivery">Delivery<br>
+                            <select name="delivery" id="delivery" required>
+                                <Option value=""></Option>
+                                <option value="PizzaMit Rider">PizzaMit Delivery</option>
+                                <option value="pick">Self-Pick</option>
+                            </select>
+                        </label>
+                        <label for="location">Location<br>
+                            <select name="location" id="location" required>
+                                <Option value=""></Option>
+                                <option value="Juja">Juja</option>
+                                <option value="Thika">Thika</option>
+                                <option value="TRM">TRM</option>
+                                <option value="Muthaiga">Muthaiga</option>
+                                <option value="Nairobi CBD">Nairobi CBD</option>
+                            </select>
+                        </label><br>
+                        <button type="submit" id="orderMit">Order</button>
+                        <button type="reset" id="cancelMit">Cancel</button>
+                    </form>
+                </div>
+                <div class="col">
+                    <span> <strong>Your <span style="color:blue">Order</span></strong></span>
+                    <form>
+                        <span><strong>Name:</strong></span><span class="nameOfCustomer"></span>
+                        <hr>
+                        <span><strong>Phone No:</strong></span><span class="phoneNoCustomer"></span>
+                        <hr>
+                        <table style="text-align:center; font-size:larger">
+                            <tr>
+                                <th>Pizza Option</th>
+                                <th>Choice</th>
+                                <th>Total</th>
+                            <tr>
+                                <th> Size of Pizza</th>
+                                <td class="pizzaSizeCustomer"></td>
+
+                            </tr>
+                            <tr>
+                                <th> Type of Crust</th>
+                                <td class="crustTypeCustomer"></td>
+                            </tr>
+                            <tr>
+                                <th> Type of Toppings</th>
+                                <td class="toppingTypeCustomer"></td>
+                            </tr>
+                            <tr>
+                                <th> Delivery Option</th>
+                                <td class="deliveryCustomer"></td>
+                            </tr>
+                            <tr>
+                                <th> Location of Delivery</th>
+                                <td class="userLocationDeliver"></td>
+                            </tr>
+                        </table>
+
+                        <hr>
+                        <button type="reset" id="cancelMit">Clear</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
-
 
     </div><br><br>
 
@@ -172,7 +241,8 @@
                 </div>
             </div>
         </div><br><br>
-        <span style="font-size:130%"><strong>Pizza<span style="color:chartreuse">Mit</span> Beef</strong></span><br><br>
+        <span style="font-size:130%"><strong>Pizza<span style="color:chartreuse">Mit</span>
+                Beef</strong></span><br><br>
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 18rem;">
