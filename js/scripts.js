@@ -11,44 +11,126 @@ $(Document).ready(function () {
 	});
 
 	// business logic
-	function User(first, phone, size, crust, topping, deliver, locate) {
+	function Order(first, phone, size, crust, number, deliver, locate) {
 		this.customerName = first;
 		this.phoneNo = phone;
 		this.sizePizza = size;
 		this.crustPizza = crust;
-		this.toppingPizza = topping;
+		this.noPizza = number;
 		this.deliverPizza = deliver;
 		this.locationDelivery = locate;
 	}
-    
+	Order.prototype.totalPizzaSizeCost = function () {
+		if (this.sizePizza == 'large') {
+			return 2600;
+		} else if (this.sizePizza == 'medium') {
+			return 1700;
+		} else if (this.sizePizza == 'small') {
+			return 900;
+		} else {
+			return 0;
+		}
+	};
+	Order.prototype.totalCrustPizzaCost = function () {
+		if (this.crustPizza == 'Crispy') {
+			return 350;
+		} else if (this.crustPizza == 'Stuffed') {
+			return 350;
+		} else if (this.crustPizza == 'Glutten Free') {
+			return 350;
+		} else {
+			return 0;
+		}
+	};
+	Order.prototype.totalToppingPizzaCost = function (getPizzaToppingNow) {
+		getPizzaToppingNow.map(function () {
+			if (this.sizePizza == 'large') {
+				return 100;
+			}else if (this.sizePizza == 'medium') {
+				return 150;
+			} else if (this.sizePizza == 'small') {
+				return 150;
+			}
+			else {
+				return 0;
+			}
+		});
+
+		
+	};
+	Order.prototype.totalLocationDeliveryCost = function () {
+		if (this.locationDelivery == 'Juja') {
+			return 150;
+		} else if (this.locationDelivery == 'Thika') {
+			return 300;
+		} else if (this.locationDelivery == 'TRM') {
+			return 500;
+		} else if (this.locationDelivery == 'Muthaiga') {
+			return 700;
+		} else if (this.locationDelivery == 'Nairobi CBD') {
+			return 900;
+		} else {
+			alert(
+				'Delivery Option Not Available in Your Area. Contact Customer Care'
+			);
+			return 0;
+		}
+	};
+	Order.prototype.getTopping = function (pizzaCustomerTopping) {
+		var pizzaToppingSelected = [];
+		pizzaCustomerTopping.map(function () {
+			pizzaToppingSelected.push($(this).val());
+		});
+		return pizzaToppingSelected;
+	};
+	Order.prototype.totalPizzaCost = function () {
+		return parseInt(
+			this.totalCrustPizzaCost() +
+			this.totalPizzaSizeCost() +
+			this.totalToppingPizzaCost() +
+			this.totalLocationDeliveryCost())*this.noPizza
+	
+	};
 
 	$('#form').submit(function (event) {
-        event.preventDefault();
+		event.preventDefault();
 		var userName = $('#fullName').val();
 		var userContact = $('#phoneNumber').val();
 		var pizzaSize = $('#size').val();
 		var pizzaCrust = $('#crust').val();
-		var toppingsType = $('#form input:checkbox').val();
+		// var pizzaTopping=$('input [name="toppings"]:checked');
+		var pizzaOrderNumber = $('#pizzaNumber').val();
 		var deliveryOption = $('#delivery').val();
 		var userLocation = $('#location').val();
 
-		var newOrder = new User(
+		var newOrder = new Order(
 			userName,
 			userContact,
 			pizzaSize,
 			pizzaCrust,
-			toppingsType,
-            deliveryOption,
+			pizzaOrderNumber,
+			deliveryOption,
 			userLocation
 		);
-		$(".nameOfCustomer").append(" " + newOrder.customerName);
-        $(".phoneNoCustomer").append(" " + newOrder.phoneNo);
-        $(".pizzaSizeCustomer").append(newOrder.sizePizza);
-        $(".crustTypeCustomer").append(newOrder.crustPizza);
-        $(".toppingTypeCustomer").append(newOrder.toppingPizza);
-        $(".deliveryCustomer").append(newOrder.deliverPizza);
-        $(".userLocationDeliver").append(newOrder.locationDelivery);
+		// User choices
+		$('.nameOfCustomer').append(' ' + newOrder.customerName);
+		$('.phoneNoCustomer').append(' ' + newOrder.phoneNo);
+		$('.pizzaSizeCustomer').append(newOrder.sizePizza);
+		$('.crustTypeCustomer').append(newOrder.crustPizza);
+		$('.toppingTypeCustomer').append(
+			newOrder.getTopping($('input[name="toppings"]:checked'))
+		);
+		$('.numberOfPizzasOrder').append(newOrder.noPizza);
+		$('.deliveryCustomer').append(newOrder.deliverPizza);
+		$('.userLocationDeliver').append(newOrder.locationDelivery);
 
-	
+		// total costs
+		$('.pizzaSizeCost').append(newOrder.totalPizzaSizeCost());
+		$('.crustTypeCost').append(newOrder.totalCrustPizzaCost());
+		// $('.toppingTypeCost').append(newOrder.totalToppingPizzaCost());
+		$('.numberOfPizzasOrderTotal').append(newOrder.noPizza);
+		$('.deliveryCustomerCost').append(newOrder.deliverPizza);
+		$('.userLocationDeliverCost').append(newOrder.totalLocationDeliveryCost());
+		$('.userPizzaAmount').append(newOrder.totalPizzaCost());
 	});
 });

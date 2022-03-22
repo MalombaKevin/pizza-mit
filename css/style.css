@@ -58,6 +58,7 @@ label{
 	color:white;
 	border: 1px red;
 }
+
 table, tr, th, td{
 	border:1px  solid;
 }
@@ -65,17 +66,6 @@ th, td{
 	width:30rem;
 }
 
-/* table{ */
-	/* width :24rem; */
-}
-/* th{ */
-	/* width:7rem; */
-	
-/* } */
-/* td{ */
-/* width:7rem; */
-/* color:blue; */
-/* } */
 .card-img-top {
 	transition: transform 0.2s ease;
 	box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);

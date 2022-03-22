@@ -16,14 +16,14 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-dark bg-dark">
+    <!-- <nav class="navbar fixed-top navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><span style="font-size:150%"><strong>Pizza<span
                 style="color:chartreuse">Mit</span></strong></a>
 
         </div>
-      </nav>
-    <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      </nav> -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
                 </ul>
             </div>
         </div>
-    </nav> -->
+    </nav>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -65,7 +65,7 @@
             <div class="carousel-item active" style="height:30em ">
                 <img class="d-block w-100"
                     src="https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg"
-                    style="height:30em" alt="First slide" class="imageCarousel">
+                    style="height:30em; linear-gradient:rgba(0,0,0, 0.3)" alt="First slide" class="imageCarousel">
                 <div class="carousel-caption d-none d-md-block">
                     <h3><span>Welcome to PizzaMit</span></h3>
                     <h2><span>Pizza for you, Pizza for me, Pizza for All</span></h2>
@@ -121,7 +121,7 @@
                             <select name="size" id="size" required>
 
                                 <Option value=""></Option>
-                                <option value="Large">Large Pizza </option>
+                                <option value="large">Large Pizza </option>
 
                                 <option value="medium">Medium Pizza</option>
                                 <option value="small">Small Pizza</option>
@@ -137,8 +137,12 @@
                             </select>
                         </label><br>
                         <label for="toppings">Toppings</label><br>
-                        <input class="toppings" type="checkbox" name="onions" id="onions" value="onions">Onions
-                        <input class="toppings" type="checkbox" name="sausage" id="sausage" value="sausages">Sausage
+                        <input class="toppings" type="checkbox" name="toppings" value="onions">Onions
+                        <input class="toppings" type="checkbox" name="toppings" value="sausages">Sausage
+
+
+                        <label for="pizzaNumber">Number of Pizzas</label>
+                        <input type="number" name="pizzaNumber" id="pizzaNumber" min="1" max="15" placeholder="(1-15)">
 
 
 
@@ -146,7 +150,6 @@
                             <select name="delivery" id="delivery" required>
                                 <Option value=""></Option>
                                 <option value="PizzaMit Rider">PizzaMit Delivery</option>
-                                <option value="pick">Self-Pick</option>
                             </select>
                         </label>
                         <label for="location">Location<br>
@@ -156,7 +159,10 @@
                                 <option value="Thika">Thika</option>
                                 <option value="TRM">TRM</option>
                                 <option value="Muthaiga">Muthaiga</option>
-                                <option value="Nairobi CBD">Nairobi CBD</option>
+                                <option value="Karen">Karen</option>
+                                <option value="Ngong Road">Ngong Road</option>
+                                <option value="Buruburu">Buruburu</option>
+                                <option value="Kileleshwa">Kileleshwa</option>
                             </select>
                         </label><br>
                         <button type="submit" id="orderMit">Order</button>
@@ -164,43 +170,56 @@
                     </form>
                 </div>
                 <div class="col">
-                    <span> <strong>Your <span style="color:blue">Order</span></strong></span>
-                    <form>
-                        <span><strong>Name:</strong></span><span class="nameOfCustomer"></span>
-                        <hr>
-                        <span><strong>Phone No:</strong></span><span class="phoneNoCustomer"></span>
-                        <hr>
-                        <table style="text-align:center; font-size:larger">
-                            <tr>
-                                <th>Pizza Option</th>
-                                <th>Choice</th>
-                                <th>Total</th>
-                            <tr>
-                                <th> Size of Pizza</th>
-                                <td class="pizzaSizeCustomer"></td>
+                    <span style="font-size:larger"> <strong>Your <span style="color:blue">Receipt</span></strong></span>
+                    <span><strong>Name:</strong></span><span class="nameOfCustomer"></span>
+                    <hr>
+                    <span><strong>Phone No:</strong></span><span class="phoneNoCustomer"></span>
+                    <hr>
+                    <table style="text-align:center; font-size:larger">
+                        <tr>
+                            <th>Pizza Option</th>
+                            <th>Choice</th>
+                            <th>Total</th>
+                        <tr>
+                            <th> Size of Pizza</th>
+                            <td class="pizzaSizeCustomer"></td>
+                            <td class="pizzaSizeCost"></td>
 
-                            </tr>
-                            <tr>
-                                <th> Type of Crust</th>
-                                <td class="crustTypeCustomer"></td>
-                            </tr>
-                            <tr>
-                                <th> Type of Toppings</th>
-                                <td class="toppingTypeCustomer"></td>
-                            </tr>
-                            <tr>
-                                <th> Delivery Option</th>
-                                <td class="deliveryCustomer"></td>
-                            </tr>
-                            <tr>
-                                <th> Location of Delivery</th>
-                                <td class="userLocationDeliver"></td>
-                            </tr>
-                        </table>
+                        </tr>
+                        <tr>
+                            <th> Type of Crust</th>
+                            <td class="crustTypeCustomer"></td>
+                            <td class="crustTypeCost"></td>
+                        </tr>
+                        <tr>
+                            <th> Type of Toppings</th>
+                            <td class="toppingTypeCustomer"></td>
+                            <td class="toppingTypeCost"></td>
+                        </tr>
 
-                        <hr>
-                        <button type="reset" id="cancelMit">Clear</button>
-                    </form>
+                        <th> Number Of Pizza</th>
+                        <td class="numberOfPizzasOrder"></td>
+                        <td class="numberOfPizzasOrderTotal"></td>
+                        </tr>
+                        <tr>
+                            <th> Delivery Option</th>
+                            <td class="deliveryCustomer"></td>
+                            <td class="deliveryCustomerCost"></td>
+                        </tr>
+                        <tr>
+                            <th> Location of Delivery</th>
+                            <td class="userLocationDeliver"></td>
+                            <td class="userLocationDeliverCost"></td>
+                        </tr>
+                    </table>
+
+                    <hr>
+                    <span>Your Total Cost:</span>
+                    <h1 class="userPizzaAmount"></h1>
+                    <span style="color:chartreuse; font-weight:bold; font-size:large">Bon
+                        Appétit!</span>
+
+
                 </div>
             </div>
 
