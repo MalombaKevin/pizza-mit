@@ -137,8 +137,13 @@
                             </select>
                         </label><br>
                         <label for="toppings">Toppings</label><br>
-                        <input class="toppings" type="checkbox" name="toppings" value="onions">Onions
-                        <input class="toppings" type="checkbox" name="toppings" value="sausages">Sausage
+                        <select name="toppings" id="toppings" required>
+                            <Option value=""></Option>
+                            <option value="Onion">Onion</option>
+                            <option value="Sausage">Sausage</option>
+                        </select>
+                        <!-- <input class="toppings" type="checkbox" name="toppings" value="onions">Onions
+                        <input class="toppings" type="checkbox" name="toppings" value="sausages">Sausage -->
 
 
                         <label for="pizzaNumber">Number of Pizzas</label>
@@ -217,7 +222,9 @@
                     <span>Your Total Cost:</span>
                     <h1 class="userPizzaAmount"></h1>
                     <span style="color:chartreuse; font-weight:bold; font-size:large">Bon
-                        Appétit!</span>
+                        Appétit!</span><br><br>
+
+                        <button type="submit" id="refresh">New Order</button>
 
 
                 </div>

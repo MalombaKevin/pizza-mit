@@ -9,13 +9,20 @@ $(Document).ready(function () {
 		$('#ordering').hide();
 		$('#orderNow').show();
 	});
+	$('#refresh').click(function(){
+		alert("New Order!")
+		location.reload();
+		$('#ordering').show();
+		$('#orderNow').hide();
+	})
 
 	// business logic
-	function Order(first, phone, size, crust, number, deliver, locate) {
+	function Order(first, phone, size, crust, topping, number, deliver, locate) {
 		this.customerName = first;
 		this.phoneNo = phone;
 		this.sizePizza = size;
 		this.crustPizza = crust;
+		this.toppingPizza =topping;
 		this.noPizza = number;
 		this.deliverPizza = deliver;
 		this.locationDelivery = locate;
@@ -42,22 +49,8 @@ $(Document).ready(function () {
 			return 0;
 		}
 	};
-	Order.prototype.totalToppingPizzaCost = function (getPizzaToppingNow) {
-		getPizzaToppingNow.map(function () {
-			if (this.sizePizza == 'large') {
-				return 100;
-			}else if (this.sizePizza == 'medium') {
-				return 150;
-			} else if (this.sizePizza == 'small') {
-				return 150;
-			}
-			else {
-				return 0;
-			}
-		});
 
-		
-	};
+	
 	Order.prototype.totalLocationDeliveryCost = function () {
 		if (this.locationDelivery == 'Juja') {
 			return 150;
@@ -76,18 +69,12 @@ $(Document).ready(function () {
 			return 0;
 		}
 	};
-	Order.prototype.getTopping = function (pizzaCustomerTopping) {
-		var pizzaToppingSelected = [];
-		pizzaCustomerTopping.map(function () {
-			pizzaToppingSelected.push($(this).val());
-		});
-		return pizzaToppingSelected;
-	};
+	
 	Order.prototype.totalPizzaCost = function () {
 		return parseInt(
 			this.totalCrustPizzaCost() +
 			this.totalPizzaSizeCost() +
-			this.totalToppingPizzaCost() +
+			200 +
 			this.totalLocationDeliveryCost())*this.noPizza
 	
 	};
@@ -98,7 +85,7 @@ $(Document).ready(function () {
 		var userContact = $('#phoneNumber').val();
 		var pizzaSize = $('#size').val();
 		var pizzaCrust = $('#crust').val();
-		// var pizzaTopping=$('input [name="toppings"]:checked');
+		var pizzaTopping=$('#toppings').val()
 		var pizzaOrderNumber = $('#pizzaNumber').val();
 		var deliveryOption = $('#delivery').val();
 		var userLocation = $('#location').val();
@@ -108,6 +95,7 @@ $(Document).ready(function () {
 			userContact,
 			pizzaSize,
 			pizzaCrust,
+			pizzaTopping,
 			pizzaOrderNumber,
 			deliveryOption,
 			userLocation
@@ -117,9 +105,7 @@ $(Document).ready(function () {
 		$('.phoneNoCustomer').append(' ' + newOrder.phoneNo);
 		$('.pizzaSizeCustomer').append(newOrder.sizePizza);
 		$('.crustTypeCustomer').append(newOrder.crustPizza);
-		$('.toppingTypeCustomer').append(
-			newOrder.getTopping($('input[name="toppings"]:checked'))
-		);
+		$('.toppingTypeCustomer').append(newOrder.toppingPizza);
 		$('.numberOfPizzasOrder').append(newOrder.noPizza);
 		$('.deliveryCustomer').append(newOrder.deliverPizza);
 		$('.userLocationDeliver').append(newOrder.locationDelivery);
@@ -127,7 +113,7 @@ $(Document).ready(function () {
 		// total costs
 		$('.pizzaSizeCost').append(newOrder.totalPizzaSizeCost());
 		$('.crustTypeCost').append(newOrder.totalCrustPizzaCost());
-		// $('.toppingTypeCost').append(newOrder.totalToppingPizzaCost());
+		$('.toppingTypeCost').append(200);
 		$('.numberOfPizzasOrderTotal').append(newOrder.noPizza);
 		$('.deliveryCustomerCost').append(newOrder.deliverPizza);
 		$('.userLocationDeliverCost').append(newOrder.totalLocationDeliveryCost());
